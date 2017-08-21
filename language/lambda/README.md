@@ -20,22 +20,18 @@
  * -> 함수 인자로 직접 코드 블럭을 전달하면 된다!
 
 ex)
- * data class Book(val title: String, val isdn: Int)
+```kotlin
+data class Book(val title: String, val isdn: Int)
 
-fun findLogestTitle(books: List<Book>) {
-	var longestTitle = ""
-	var longest: Book? = null 
-	for (book in books) {
-		if (book.title.length > longestTitle.length) {
-			longestTitle = book.title
-			longest = book
-		}
-	}
+fun findLongestTitleBook(books: List<Book>){
+    var lTitlebook = Book("", 0)
+    for (book in books) {
+        if (book.title.length > lTitlebook.title.length) {
+            lTitlebook = book
+        }
+    }
 }
-
-ex) 
-val book = listOf(Book("Hello", 2323432), Book("Oh my lord!", 342322))
-println(book.maxBy{it.title})
+```
 
 ### 문법
 작은 코드 블록으로 값처럼 전달이 가능합니다. 따라서 독립적으로 선언하고 변수에 저장할 수 있습니다. 
